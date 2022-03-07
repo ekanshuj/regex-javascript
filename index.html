@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form-validation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      color: rgb(39, 71, 61);
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    .form-design {
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .form-design input {
+      padding: 1rem;
+      width: 50vw;
+    }
+
+    .form-design span {
+      color: red;
+      font-weight: bolder;
+      font-size: 1rem;
+      margin-left: 5.625rem;
+    }
+
+    .form-design #passError {
+      margin-left: 8.4rem;
+    }
+
+    .form-design #cpassError {
+      margin-left: 15rem;
+    }
+
+    .form-design #phoneError {
+      margin-left: 5.8rem;
+    }
+
+
+    form #btn {
+      padding: 0.75rem;
+      font-size: 1rem;
+      background: black;
+      color: ghostwhite;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Form Validation Using Javascript</h1>
+  <div class="container">
+    <form action=" /blank.php" name="myForm" onsubmit="return validateForm()" method="post">
+
+      <div class="form-design" id="name">
+        Name: <input type="text" name="f-name" placeholder="Enter your Name">
+        <br>
+        <span id="nameError"></span>
+      </div>
+
+      <div class="form-design" id="email">
+        Email: <input type="email" name="f-email" placeholder="Enter your Email" required>
+        <br>
+        <span id="mailError"></span>
+      </div>
+
+      <div class="form-design" id="phone">
+        Phone: <input type="phone" name="f-phone" placeholder="Enter your phone" required>
+        <br>
+        <span id="phoneError"></span>
+      </div>
+
+      <div class="form-design" id="pass">
+        Password: <input type="password" name="f-pass" placeholder="Enter your Password" required>
+        <br>
+        <span id="passError"></span>
+      </div>
+
+      <div class="form-design" id="cpass">
+        Confirm Password: <input type="password" name="fc-pass" placeholder="Confirm your Password" required>
+        <br>
+        <span id="cpassError"></span>
+      </div>
+      <input id="btn" value="Click to submit your Form" type="submit">
+
+    </form>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
