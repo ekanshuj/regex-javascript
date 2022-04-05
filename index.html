@@ -5,105 +5,50 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>form-validation</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 3rem;
-      color: rgb(39, 71, 61);
-    }
-
-    .container {
-      padding: 2rem;
-    }
-
-    .form-design {
-      padding: 1rem;
-      font-size: 1.5rem;
-    }
-
-    .form-design input {
-      padding: 1rem;
-      width: 50vw;
-    }
-
-    .form-design span {
-      color: red;
-      font-weight: bolder;
-      font-size: 1rem;
-      margin-left: 5.625rem;
-    }
-
-    .form-design #passError {
-      margin-left: 8.4rem;
-    }
-
-    .form-design #cpassError {
-      margin-left: 15rem;
-    }
-
-    .form-design #phoneError {
-      margin-left: 5.8rem;
-    }
-
-
-    form #btn {
-      padding: 0.75rem;
-      font-size: 1rem;
-      background: black;
-      color: ghostwhite;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
-  </style>
+  <script src="script.js" defer></script>
+  <title>Form-Validation</title>
 </head>
 
 <body>
-  <h1>Form Validation Using Javascript</h1>
-  <div class="container">
-    <form action=" /blank.php" name="myForm" onsubmit="return validateForm()" method="post">
+  <main>
+    <div class="heading">
+      <h1 style="text-align: center;">Complete Form Validation Using Vanilla Javascript & regex</h1>
+    </div>
+    <section style="display: grid;place-items: center;">
+      <form style="border: 3px solid black" action="text.php">
+        <div class="userName" style="display: flex; align-items: center; padding: 0.75rem;">
+          <label style="font-size: 1.75rem;" for="userName">Name:</label>
+          <input id="input__userName" style="height: 2.4rem; width: 100%; font-size: 1.25rem;outline: none;"
+            placeholder="Enter your name/username" type="text">
+        </div>
+        <div class="email" style="display: flex; align-items: center; padding: 0.75rem;">
+          <label style="font-size: 1.75rem;" for="userName">Email:</label>
+          <input id="input__email" style="height: 2.4rem; width: 100%; font-size: 1.25rem;outline: none;"
+            placeholder="Enter your email" type="email">
+        </div>
+        <div class="phone" style="display: flex; align-items: center; padding: 0.75rem;">
+          <label style="font-size: 1.75rem;" for="userName">Phone:</label>
+          <input id="input__phone" style="height: 2.4rem; width: 100%; font-size: 1.25rem;outline: none;"
+            placeholder="Enter your phone" type="number">
+        </div>
+        <div class="password" style="display: flex; align-items: center; padding: 0.75rem;">
+          <label style="font-size: 1.75rem;" for="userName">Password:</label>
+          <input id="input__password" style="height: 2.4rem; width: 100%; font-size: 1.25rem;outline: none;"
+            placeholder="Enter your password" type="password">
+        </div>
+        <div class="confirm-password" style="display: flex; align-items: center; padding: 0.75rem;">
+          <label style="font-size: 1.75rem;" for="userName">C.Password:</label>
+          <input id="input__c-password" style="height: 2.4rem; width: 100%; font-size: 1.25rem;outline: none;"
+            placeholder="Confirm your password" type="password">
+        </div>
+      </form>
+      <button
+        style="padding: 0.5rem 0.75rem;font-size: 1.3255rem; margin: 0.44rem 0rem;background: black;color: ghostwhite;font-weight: bold;border: none;text-transform: uppercase;"
+        type="submit" id="btn">Click to Submit
+        your Form</button>
+    </section>
+  </main>
 
-      <div class="form-design" id="name">
-        Name: <input type="text" name="f-name" placeholder="Enter your Name">
-        <br>
-        <span id="nameError"></span>
-      </div>
-
-      <div class="form-design" id="email">
-        Email: <input type="email" name="f-email" placeholder="Enter your Email" required>
-        <br>
-        <span id="mailError"></span>
-      </div>
-
-      <div class="form-design" id="phone">
-        Phone: <input type="phone" name="f-phone" placeholder="Enter your phone" required>
-        <br>
-        <span id="phoneError"></span>
-      </div>
-
-      <div class="form-design" id="pass">
-        Password: <input type="password" name="f-pass" placeholder="Enter your Password" required>
-        <br>
-        <span id="passError"></span>
-      </div>
-
-      <div class="form-design" id="cpass">
-        Confirm Password: <input type="password" name="fc-pass" placeholder="Confirm your Password" required>
-        <br>
-        <span id="cpassError"></span>
-      </div>
-      <input id="btn" value="Click to submit your Form" type="submit">
-
-    </form>
-  </div>
-
-  <script src="/script.js"></script>
 </body>
 
 </html>

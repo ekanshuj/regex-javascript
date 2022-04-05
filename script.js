@@ -1,58 +1,72 @@
+const submitBtn = document.getElementById('btn');
+const userName = document.getElementById('input__userName');
+let userNameIsValid = false;
+const email = document.getElementById('input__email');
+let emailIsValid = false;
+const phone = document.getElementById('input__phone');
+let phoneIsValid = false;
+const password = document.getElementById('input__password');
+let passwordIsValid = false;
+const cPassword = document.getElementById('input__c-password');
+let cPasswordIsValid = false;
 
-function validateForm() {
-  let name = document.forms['myForm']['f-name'].value;
-  if (name === '' || name === null || name.length < 4) {
-    nameError.innerHTML = 'Error';
-    return false;
+userName.addEventListener('blur', () => {
+  const regex = /^[\w@\-]{5,20}$/;
+  const str = userName.value;
+  console.log(regex.exec(str));
+  if (regex.exec(str)) {
+    userNameIsValid = true;
+  } else {
+    userNameIsValid = false;
   }
-  else {
-    nameError.innerHTML = '';
-  }
-
-  //
-
-  let email = document.forms['myForm']['f-email'].value;
-  if (email.length < 12 || email.length === 0) {
-    mailError.innerHTML = 'Invalid Email';
-    return false;
-  }
-  else {
-    mailError.innerHTML = '';
-  }
-
-  //
-
-  let phone = document.forms['myForm']['f-phone'].value;
-  if (phone.length !== 10 || phone.length === 0 || phone === '') {
-    phoneError.innerHTML = 'Invalid number';
-    return false;
-  }
-  else {
-    phoneError.innerHTML = '';
-  }
-
-  //
-
-  let pass = document.forms['myForm']['f-pass'].value;
-  if (pass.length < 6) {
-    passError.innerHTML = 'Password too short'
-    return false;
-  }
-  else {
-    passError.innerHTML = '';
+})
+email.addEventListener('blur', () => {
+  const regex = /^[\d\w\-\.\&]{5,30}[@][a-z]{5,11}[\.][a-z]{3,7}$/;
+  const str = email.value;
+  console.log(regex.exec(str));
+  if (regex.exec(str)) {
+    emailIsValid = true;
+  } else {
+    emailIsValid = false;
   }
 
-  //
-
-  let cpass = document.forms['myForm']['fc-pass'].value;
-  if (cpass.length != pass) {
-    cpassError.innerHTML = 'Password does not match!'
-    return false;
+})
+phone.addEventListener('blur', () => {
+  const regex = /^\d{10}$/;
+  const str = phone.value;
+  console.log(regex.exec(str));
+  if (regex.exec(str)) {
+    phoneIsValid = true;
+  } else {
+    phoneIsValid = false;
   }
-  else {
-    cpassError.innerHTML = '';
+
+})
+password.addEventListener('blur', () => {
+  const regex = /^[\d\w\.\-@!#%^&*()=\+\[\]\|\\'";:/\?,<>`~ ]{6,}/;
+  const str = password.value;
+  console.log(regex.exec(str));
+  if (regex.exec(str)) {
+    passwordIsValid = true;
+  } else {
+    passwordIsValid = false;
   }
 
-  return true;
+})
+cPassword.addEventListener('blur', () => {
+  if (password.value === cPassword.value && password.length === cPassword.length) {
+    cPasswordIsValid = true;
+  } else {
+    cPasswordIsValid = false;
+  }
+})
 
-}
+
+submitBtn.addEventListener('click', () => {
+  if (userNameIsValid && emailIsValid && phoneIsValid && passwordIsValid && cPasswordIsValid) {
+    alert('Form Submitted Successfully.');
+  } else {
+    alert('Form is not valid.Please try again.');
+  }
+
+})
