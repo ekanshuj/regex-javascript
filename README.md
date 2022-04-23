@@ -13,6 +13,7 @@ This farmore is the simplest and eaiest way to validate a form.
 Additional Note ->
 If you came through this repo in somewhere future and have something farmore good than this then please let me know,
 
+Try Consoles !
 
 
 KEEP LEARNING !!
